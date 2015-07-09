@@ -1,3 +1,9 @@
+=begin
+    
+Script used to generate random fianncial data.
+Author: nlq506
+    
+=end
 
 require 'date'
 require 'random_data'
