@@ -1,3 +1,11 @@
+
+=begin
+    
+Account class
+Author: nlq506
+    
+=end
+
 class Account
     def initialize (acct_num)
         # Instance variables
