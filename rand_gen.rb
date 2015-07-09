@@ -44,17 +44,41 @@ require 'random_data'
      return prch_code
  end
 
+# Write to a text file
+ def write_file
+     file_name = "data/output1"
+     output_file = File.open(file_name,"w")
+     
+    for i in 1..10
+        acct_num = random_account_number()
+        deb_cred_indicator = random_debit_credit_indicator()
+        trnx_date = random_date()
+        trnx_amnt = random_ammount()
+        stmt_date = random_date()
+        merch_catg = random_merchant_category()
+        prch_code = random_purchase_code()
 
-for i in 1..10
-    acct_num = random_account_number()
-    deb_cred_indicator = random_debit_credit_indicator()
-    trnx_date = random_date()
-    trnx_amnt = random_ammount()
-    stmt_date = random_date()
-    merch_catg = random_merchant_category()
-    prch_code = random_purchase_code()
+        output_file.puts "#{acct_num}" + "/001" + "#{stmt_date}" + "/001" + "#{trnx_date}" + "/001" + "#{merch_catg}" + "/001" + "#{prch_code}" + "/001" + "#{deb_cred_indicator}" + "/001" + "#{trnx_amnt}"
+    end
+    output_file.close
+ end
 
-    puts "#{acct_num}" + "/001" + "#{stmt_date}" + "/001" + "#{trnx_date}" + "/001" + "#{merch_catg}" + "/001" + "#{prch_code}" + "/001" + "#{deb_cred_indicator}" + "/001" + "#{trnx_amnt}"
-end
+# Print to console
+ def print_to_console
+    for i in 1..10
+        acct_num = random_account_number()
+        deb_cred_indicator = random_debit_credit_indicator()
+        trnx_date = random_date()
+        trnx_amnt = random_ammount()
+        stmt_date = random_date()
+        merch_catg = random_merchant_category()
+        prch_code = random_purchase_code()
+
+        puts "#{acct_num}" + "/001" + "#{stmt_date}" + "/001" + "#{trnx_date}" + "/001" + "#{merch_catg}" + "/001" + "#{prch_code}" + "/001" + "#{deb_cred_indicator}" + "/001" + "#{trnx_amnt}"
+    end
+ end
+
+write_file()
+print_to_console()
 
 
