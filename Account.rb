@@ -12,20 +12,26 @@ class Account
         # Constructor
         @acct_num = acct_num
     end
-
+    
+    # Print account numbers
     def print_account_number
         puts "#{@acct_num}"
     end
 
+    # Get Account number for an Account object
     def get_account_number
         @acct_num
     end
-
+    
+    # Create a random account number
+    def random_account_number
+        acct_num = rand(10**11).to_s.rjust(11, '1')
+        return acct_num
+    end
 end
 
 # Make a new object of type account
 # Ojects are created on the Heap
-
 acct_1 = Account.new (12345678912)
 acct_2 = Account.new (12345678913)
 
